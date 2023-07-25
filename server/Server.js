@@ -5,7 +5,9 @@ const connectDB = require("./config/db");
 connectDB();
 // const User = require("./models/User");
 const userRoutes = require('./routes/userRoutes');
+//const adminRoutes = require('./routes/adminRoutes');
 const productRoutes = require("./routes/productRoutes");
+const adminControllers = require('./controller/adminControllers');
 
 const cors = require("cors");
 const cookiParser = require("cookie-parser")
@@ -21,6 +23,10 @@ app.use(express.json());
 app.use(cookiParser());
 app.use(cors());
 app.use(userRoutes);
+//app.use(adminRoutes);
+
+app.post('/admin/login', adminControllers.loginAdmin)
+
 app.get("/",(req,res)=>{
     res.status(201).json("Server created")
 })

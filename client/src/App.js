@@ -19,6 +19,8 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import Profile from "./components/Profile";
+import LoginAdmin from "./components/admin/AdminLogin";
+import AdminDash from './components/admin/AdminDash'
 function App() {
   
   const [loginForm, setLoginForm] = useState("login");
@@ -51,6 +53,8 @@ function App() {
         <Route path="/product/:id" element={<ProductScreen />} exact></Route>
         <Route path="/cart" element={<CartScreen />} exact></Route> 
         <Route path="/profile" element={<Profile />} exact></Route>
+        <Route path='/admin/dashboard' element={<AdminDash />} />
+        <Route path="/admin/login" element={<LoginAdmin />} exact></Route>
       </Routes>
       {(!isLoginPage && !isRegisterPage) && <Footer />}
     </>
