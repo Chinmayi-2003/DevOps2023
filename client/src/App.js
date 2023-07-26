@@ -35,10 +35,11 @@ function App() {
   // Check if the current location is the login page
   const isLoginPage = currentLocation.pathname === "/login";
   const isRegisterPage = currentLocation.pathname === "/register";
+  const isAdmin = currentLocation.pathname === "/admin/dashboard";
 
   return (
     <>
-      {(!isLoginPage && !isRegisterPage)&& <Navbar />}
+      {(!isAdmin && !isLoginPage && !isRegisterPage)&& <Navbar />}
       <Routes>
         <Route path="/login" element={<Login></Login>} exact></Route>
         <Route path="/register" element={<Register></Register>} exact></Route>
@@ -56,7 +57,7 @@ function App() {
         <Route path='/admin/dashboard' element={<AdminDash />} />
         <Route path="/admin/login" element={<LoginAdmin />} exact></Route>
       </Routes>
-      {(!isLoginPage && !isRegisterPage) && <Footer />}
+      {(!isAdmin && !isLoginPage && !isRegisterPage) && <Footer />}
     </>
   );
 }

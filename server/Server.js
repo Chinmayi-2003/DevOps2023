@@ -25,6 +25,8 @@ app.use(cors());
 app.use(userRoutes);
 //app.use(adminRoutes);
 
+// app.get('/admin/admins', adminController.getAdmins)
+// app.post('/admin/add', adminController.addAdmins)
 app.post('/admin/login', adminControllers.loginAdmin)
 
 app.get("/",(req,res)=>{
