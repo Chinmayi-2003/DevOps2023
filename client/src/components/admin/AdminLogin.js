@@ -1,48 +1,112 @@
+import React from 'react';
 import axios from 'axios'
 import { useState } from 'react'
 import './admin.css'
 import { useNavigate } from 'react-router-dom'
+import Avatar from '@mui/material/Avatar';
+// import { makeStyles } from '@mui/styles';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function LoginAdmin() {
-    const navigate = useNavigate()
-    const [userName, setUsername] = useState('')
-    const [password, setPassword] = useState('')
 
-    const handleClick = () => {
-        console.log(userName, password)
-        axios.post('http://localhost:5000/admin/login', {
-            userName: userName,
-            password,
-        })
-            .then((res) => {
-                console.log(res.data)
-                localStorage.setItem('type', res.data.type)
-                localStorage.setItem('token', res.data.token)
-                navigate('/admin/dashboard')
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
 
-    return (
-        <div className='card-admin'>
-            <h1> LOGIN ADMIN </h1>
-            <input
-                value={userName}
+const defaultTheme = createTheme();
+
+export default function LoginAdmin() {
+  const navigate = useNavigate()
+  const [userName, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleClick = () => {
+      console.log(userName, password)
+      axios.post('http://localhost:5000/admin/login', {
+          userName: userName,
+          password,
+      })
+          .then((res) => {
+              console.log(res.data)
+              localStorage.setItem('type', res.data.type)
+              localStorage.setItem('token', res.data.token)
+              navigate('/admin/dashboard')
+          })
+          .catch(err => {
+              console.log(err)
+          })
+  }
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding:'5px',
+            boxShadow: "inset rgba(0, 0, 0, 0.3)"
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          </Avatar>
+          <Typography component="h1" variant="h5">
+          Admin Sign In
+          </Typography>
+          <Box  sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              value={userName}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder='User Name' className='input-admin' type="text" />
-
-            <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder='Password' className='input-admin' type="password" />
-
-            <button
-                onClick={handleClick}
-                className='submit-btn'> SUBMIT </button>
-        </div>
-    )
+                placeholder='User Name' className='input-admin' type="text"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder='Password' className='input-admin' type="password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              onClick={handleClick}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
 }
-
-export default LoginAdmin

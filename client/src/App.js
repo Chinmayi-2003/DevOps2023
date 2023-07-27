@@ -35,7 +35,8 @@ function App() {
   // Check if the current location is the login page
   const isLoginPage = currentLocation.pathname === "/login";
   const isRegisterPage = currentLocation.pathname === "/register";
-  const isAdmin = currentLocation.pathname === "/admin/dashboard";
+  // const isAdmin = currentLocation.pathname === "/admin/dashboard";
+  const isAdmin = currentLocation.pathname === "/admin/login";
 
   return (
     <>

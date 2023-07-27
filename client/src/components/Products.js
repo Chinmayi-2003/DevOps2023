@@ -33,7 +33,7 @@ export default function Products() {
       <div className="container-product-fluid" id="container-product-fluid">
         <div className="container-product">
           <center>
-            <form>
+            <form className="product_form">
               <i className="fas fa-search"></i>
               <div className="search">
                 <input
