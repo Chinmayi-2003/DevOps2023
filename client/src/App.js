@@ -36,7 +36,8 @@ function App() {
   const isLoginPage = currentLocation.pathname === "/login";
   const isRegisterPage = currentLocation.pathname === "/register";
   // const isAdmin = currentLocation.pathname === "/admin/dashboard";
-  const isAdmin = currentLocation.pathname === "/admin/login";
+  const isAdmin = currentLocation.pathname.startsWith("/admin");
+  console.log("ADMIN"+isAdmin)
 
   return (
     <>
