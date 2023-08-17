@@ -54,7 +54,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push your-dockerhub-username/saya-frontend
+          docker push dhiksha123/saya-frontend
         working-directory: ${{ github.workspace }}
 
       - name: Docker Compose
@@ -67,4 +67,3 @@ jobs:
           ls -l
           npm install
           ls -l
-
