@@ -57,7 +57,13 @@ jobs:
           docker push dhiksha123/saya-frontend
         working-directory: ${{ github.workspace }}
 
-      - name: Run Docker Compose
+      - name: Docker Compose
+        run: docker-compose up -d
+        working-directory: ${{ github.workspace }}
+
+      - name: Debug Client Directory
         run: |
-          cd ${{ github.workspace }}
-          docker-compose up -d
+          cd client
+          ls -l
+          npm install
+          ls -l
