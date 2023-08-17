@@ -2,8 +2,7 @@ name: SAYA CI/CD
 
 on:
   push:
-    branches:
-      - main
+    branches:["master"]
 
 jobs:
   build:
@@ -39,3 +38,11 @@ jobs:
       - name: Docker Compose
         run: docker-compose up -d
         working-directory: ${{ github.workspace }}
+
+      - name: Debug Client Directory
+        run: |
+          cd client
+          ls -l
+          npm install
+          ls -l
+
