@@ -1,11 +1,11 @@
 version: '3'
 services:
   frontend:
-    image: your-frontend-image-name # Replace with your actual frontend image name
+    image: saya-frontend # Replace with your actual frontend image name
     ports:
       - "3000:3000" # Map port 3000 in the container to port 3000 on your host
 
   backend:
-    image: your-backend-image-name # Replace with your actual backend image name
+    image: saya-backend # Replace with your actual backend image name
     ports:
       - "5000:5000" # Map port 5000 in the container to port 5000 on your host
