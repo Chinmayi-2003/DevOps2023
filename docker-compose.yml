@@ -1,11 +1,11 @@
 version: '3'
 services:
   frontend:
-    image: saya-frontend .
+    image: saya-frontend:latest
     ports:
-      - "3000:3000" # Map port 3000 in the container to port 3000 on your host
+      - "3000:3000"
 
   backend:
-    image: saya-backend .
+    image: saya-backend:latest
     ports:
-      - "5000:5000" # Map port 5000 in the container to port 5000 on your host
+      - "5000:5000"
