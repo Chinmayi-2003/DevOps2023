@@ -39,7 +39,7 @@ jobs:
       - name: Build Docker image
         run: |
           cd server
-          docker build -t your-dockerhub-username/saya-frontend .
+          docker build -t dhiksha123/saya-frontend .
         working-directory: ${{ github.workspace }}
 
       - name: Log in to Docker Hub
