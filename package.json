@@ -9,7 +9,7 @@
     "fronthand": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run fronthand\"",
     "data:import": "node server/seederScript",
-    "test": "jest" // Add this line
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
