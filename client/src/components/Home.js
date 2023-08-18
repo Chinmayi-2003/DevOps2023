@@ -45,7 +45,7 @@ export default function Home() {
         return () => {
             clearTimeout(timeout); // Clean up the timeout on unmount
         };
-    });
+    });//removed []
   const scrollleft = ()=>{
     var left = document.querySelector(".scroll");
     console.log(left);
