@@ -36,14 +36,16 @@ export default function Home() {
         }
       };
       
-    useEffect(() => {
-        setTimeout(() => {
+      useEffect(() => {
+        const timeout = setTimeout(() => {
             DashboardValid();
             // setData(true)
-        }, 2000)
-        return () => clearTimeout(timeout); // Clean up the timeout on unmount
-    },[])
-  // },[])
+        }, 2000);
+    
+        return () => {
+            clearTimeout(timeout); // Clean up the timeout on unmount
+        };
+    }, []);
   const scrollleft = ()=>{
     var left = document.querySelector(".scroll");
     console.log(left);
