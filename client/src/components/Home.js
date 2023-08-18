@@ -41,7 +41,7 @@ export default function Home() {
             DashboardValid();
             // setData(true)
         }, 2000)
-
+        return () => clearTimeout(timeout); // Clean up the timeout on unmount
     },[])
   // },[])
   const scrollleft = ()=>{
