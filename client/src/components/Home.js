@@ -1,4 +1,4 @@
-import React, { useContext, useEffect ,useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate} from "react-router-dom"
 import { LoginContext } from './ContextProvider/Context';
 import HeadOffice from './images/ho.jpg';
@@ -43,6 +43,7 @@ export default function Home() {
         }, 2000)
 
     },[])
+  // },[])
   const scrollleft = ()=>{
     var left = document.querySelector(".scroll");
     console.log(left);

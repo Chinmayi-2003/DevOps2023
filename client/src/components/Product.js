@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import "./style/Product.css";
-import impchainsaw from "./images/STIHL MS250 2.png";
+// import impchainsaw from "./images/STIHL MS250 2.png";
 export default function Product({ imageUrl, description, price, name, productId }) {
   return (
     <div className='product__chainsaw'>

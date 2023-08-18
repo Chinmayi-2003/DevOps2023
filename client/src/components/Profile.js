@@ -3,7 +3,7 @@ import { LoginContext } from './ContextProvider/Context';
 
 
 function Profile() {
-  const { logindata, setLoginData } = useContext(LoginContext);
+  // const { logindata, setLoginData } = useContext(LoginContext);
   return (
     <div className='divbody'>
       hi
