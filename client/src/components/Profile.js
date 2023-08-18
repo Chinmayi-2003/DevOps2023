@@ -1,5 +1,5 @@
-import React,{useContext} from 'react';
-import { LoginContext } from './ContextProvider/Context';
+import React from 'react';
+// import { LoginContext } from './ContextProvider/Context';
 
 
 function Profile() {
