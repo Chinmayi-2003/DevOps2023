@@ -1,10 +1,10 @@
 version: '3'
 services:
   frontend:
-    image: dhiksha123/saya-frontend
+    image: chinmayi0301/saya-frontend
     ports:
       - "3000:3000"
   backend:
-    image: dhiksha123/saya-backend
+    image: chinmayi0301/saya-backend
     ports:
       - "5000:5000"
