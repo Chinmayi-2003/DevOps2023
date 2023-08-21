@@ -59,13 +59,13 @@ jobs:
 
       - name: Push Docker image frontend
         run: |
-          docker push dhiksha123/saya-frontend
+          docker push chinmayi0301/saya-frontend
         working-directory: ${{ github.workspace }}/client
       
       - name: Push Docker image backend
         run: |
-          docker push dhiksha123/saya-frontend
-        working-directory: ${{ github.workspace }}/../server
+          docker push chinmayi0301/saya-backend
+        working-directory: ${{ github.workspace }}/server
 
       - name: Docker Compose
         run: docker-compose up -d
