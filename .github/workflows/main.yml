@@ -39,17 +39,18 @@ jobs:
         run: |
           cd server
 
-      - name: Build Docker image backend
+      - name: Push Docker image frontend
         run: |
-          cd server
-          docker build -t chinmayi0301/saya-backend .
+          cd client
+          docker push chinmayi0301/saya-frontend
         working-directory: ${{ github.workspace }}
 
-      - name: Build Docker image frontend
+      - name: Push Docker image backend
         run: |
-          cd ../client
-          docker build -t chinmayi0301/saya-frontend .
+          cd server
+          docker push chinmayi0301/saya-backend
         working-directory: ${{ github.workspace }}
+
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
