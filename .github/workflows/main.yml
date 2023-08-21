@@ -39,10 +39,16 @@ jobs:
         run: |
           cd server
 
-      - name: Build Docker image
+      - name: Build Docker image backend
         run: |
           cd server
-          docker build -t dhiksha123/saya-frontend .
+          docker build -t chinmayi0301/saya-backend .
+        working-directory: ${{ github.workspace }}
+
+      - name: Build Docker image frontend
+        run: |
+          cd ../client
+          docker build -t chinmayi0301/saya-frontend .
         working-directory: ${{ github.workspace }}
 
       - name: Log in to Docker Hub
@@ -51,10 +57,15 @@ jobs:
           username: "${{ secrets.DOCKER_USERNAME }}"
           password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
 
-      - name: Push Docker image
+      - name: Push Docker image frontend
         run: |
-          docker push dhiksha123/saya-frontend
-        working-directory: ${{ github.workspace }}
+          docker push chinmayi0301/saya-frontend
+        working-directory: ${{ github.workspace }}/client
+      
+      - name: Push Docker image backend
+        run: |
+          docker push chinmayi0301/saya-backend
+        working-directory: ${{ github.workspace }}/../server
 
       - name: Docker Compose
         run: docker-compose up -d
