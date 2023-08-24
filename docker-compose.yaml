@@ -34,10 +34,14 @@ services:
     image: mongo:latest
     ports:
       - '27017:27017'
-    volumes:
-      - mongoData:/data/db
-    container_name: mongo-contianer
+    container_name: mongo-container
     networks: 
       - mern-stack-networks
-#hi
+    volumes:
+      - mongoData:/data/db
 
+networks:
+  mern-stack-networks:
+
+volumes:
+  mongoData:
