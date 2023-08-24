@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,12 +21,12 @@ import CartScreen from "./screens/CartScreen";
 import Profile from "./components/Profile";
 function App() {
   
-  const [loginForm, setLoginForm] = useState("login");
+  // const [loginForm, setLoginForm] = useState("login");
 
-  const toggleForm = (formName) => {
-    console.log(formName);
-    setLoginForm(formName);
-  };
+  // const toggleForm = (formName) => {
+  //   console.log(formName);
+  //   setLoginForm(formName);
+  // };
 
   const currentLocation = useLocation();
   console.log("path"+currentLocation.pathname)

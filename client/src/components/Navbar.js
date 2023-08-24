@@ -27,14 +27,14 @@ function Navbar(props) {
 
   const history = useNavigate();
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const [anchorEl, setAnchorEl] = React.useState(null); uncomment
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {  //uncomment it
+  //   setAnchorEl(null);
+  // };
 
   const logoutuser = async () => {
     let token = localStorage.getItem("usersdatatoken");
@@ -140,7 +140,7 @@ function Navbar(props) {
                     to="/"
                     onClick={() => {
                       logoutuser();
-                      handleClose();
+                      // handleClose();  //uncomment
                     }}
                   >
                     Logout

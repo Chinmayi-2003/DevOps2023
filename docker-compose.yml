@@ -1,0 +1,10 @@
+version: '3'
+services:
+  frontend:
+    image: chinmayi0301/saya-frontend
+    ports:
+      - "3000:3000"
+  backend:
+    image: chinmayi0301/saya-backend
+    ports:
+      - "5000:5000"

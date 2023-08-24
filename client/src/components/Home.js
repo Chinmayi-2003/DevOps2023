@@ -1,4 +1,4 @@
-import React, { useContext, useEffect ,useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate} from "react-router-dom"
 import { LoginContext } from './ContextProvider/Context';
 import HeadOffice from './images/ho.jpg';
@@ -36,13 +36,16 @@ export default function Home() {
         }
       };
       
-    useEffect(() => {
-        setTimeout(() => {
+      useEffect(() => {
+        const timeout = setTimeout(() => {
             DashboardValid();
             // setData(true)
-        }, 2000)
-
-    },[])
+        }, 2000);
+    
+        return () => {
+            clearTimeout(timeout); // Clean up the timeout on unmount
+        };
+    });//removed []
   const scrollleft = ()=>{
     var left = document.querySelector(".scroll");
     console.log(left);

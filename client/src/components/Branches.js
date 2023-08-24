@@ -14,9 +14,9 @@ export default function Branches() {
         Puttur
         </p>
         <div className="hoff">
-           <div className="horow" id="officeimg"><img src={HeadOffice} />
+           <div className="horow" id="officeimg"><img src={HeadOffice} alt='loading'/>
            </div>
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.2272241523915!2d75.2075706!3d12.763750499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4bdbe5de45253%3A0xc9851bc493de6503!2sSAYA%2C%20Puttur!5e0!3m2!1sen!2sin!4v1670078255962!5m2!1sen!2sin" className='map' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.2272241523915!2d75.2075706!3d12.763750499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4bdbe5de45253%3A0xc9851bc493de6503!2sSAYA%2C%20Puttur!5e0!3m2!1sen!2sin!4v1670078255962!5m2!1sen!2sin" className='map' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='Googlemap'>
             </iframe>
         </div>
         

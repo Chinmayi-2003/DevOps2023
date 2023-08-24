@@ -1,6 +1,6 @@
 import React from 'react'
 import './style/CartItem.css';
-import impchainsaw from "../components/images/STIHL MS250 2.png";
+// import impchainsaw from "../components/images/STIHL MS250 2.png";
 import { Link } from "react-router-dom";
 export default function CartItem({ item, qtyChangeHandler, removeHandler }) {
   return (
