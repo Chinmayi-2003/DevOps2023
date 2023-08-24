@@ -6,5 +6,7 @@ services:
       - "3000:3000"
   backend:
     image: chinmayi0301/saya-backend
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/sayaEnterprises
     ports:
       - "5000:5000"
