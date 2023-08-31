@@ -92,7 +92,7 @@ function Navbar(props) {
             </Link>
           </div>
           <div className="sayatitle" id="top-nav">
-            <span className="saya">Yessss ENTERPRISES</span>
+            <span className="saya">SAYA ENTERPRISES</span>
             <br />
             <span className="slogan">
               Sales and Services of Agricultural Machineries and Implements

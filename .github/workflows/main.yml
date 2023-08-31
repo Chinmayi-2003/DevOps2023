@@ -29,7 +29,6 @@ jobs:
           cd ../server
           npm install
 
-
       - name: Build and test frontend
         run: |
           cd client
