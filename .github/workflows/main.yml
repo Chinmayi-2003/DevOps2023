@@ -41,7 +41,7 @@ jobs:
       - name: Build Docker image backend
         run: |
           cd server
-          docker build -t chinmayi0301/saya-backend .
+          docker build -t chinmayi0301/saya-backend:latest .
         working-directory: ${{ github.workspace }}
 
       - name: Build Docker image frontend
@@ -63,7 +63,7 @@ jobs:
       
       - name: Push Docker image backend
         run: |
-          docker push chinmayi0301/saya-backend
+          docker push chinmayi0301/saya-backend:latest
         working-directory: ${{ github.workspace }}/server
 
       - name: Docker Compose
