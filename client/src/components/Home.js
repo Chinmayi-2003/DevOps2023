@@ -14,7 +14,7 @@ export default function Home() {
         let token = localStorage.getItem("usersdatatoken");
         // console.log("dash");
         // console.log(token);
-      
+        
         const res = await fetch("http://localhost:5000/validuser", {
           method: "GET",
           headers: {
